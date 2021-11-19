@@ -1,0 +1,38 @@
+#server:
+#  port: 1030 # 端口
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1010/eureka/ # 注册到哪里
+#    registry-fetch-interval-seconds: 5 # 拉去注册表时间间隔(默认30 s)
+#  instance:
+#    instance-id: zuul:1030 # 表示注册时使用的实例名
+#    prefer-ip-address: true # 表示使用ip 注册到eureka
+#    lease-renewal-interval-in-seconds: 5 # 客户端续约频率(默认30)
+#spring:
+#  application:
+#    name: zuul-server # 注册时, 配置的名字
+#zuul:
+#  prefix: "/services" # 添加同意前缀
+#  ignored-services: "*" # 设置禁用所用使用服务名访问的方式
+#  routes:
+#    pay-server: "/pay/**"
+#    order-server: "/order/**"
+#    user-server: "/user/**"
+#  retryable: true #是否开启重试功能
+#  ribbon:
+#    eager-load.enabled: true # 饥饿加载
+#ribbon:
+#  MaxAutoRetries: 1 #对当前服务的重试次数
+#  MaxAutoRetriesNextServer: 1 #切换相同Server的次数
+#  OkToRetryOnAllOperations: false # 对所有的操作请求都进行重试，如post就不能重试，如果没做幂等处理，重试多次post会造成数据的多次添加或修改
+#  ConnectTimeout: 3000 #请求连接的超时时间
+#  ReadTimeout: 5000 #请求处理的超时时间
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 10000
+#            #如果配置ribbon的重试，hystrix的超时时间要大于ribbon的超时时间

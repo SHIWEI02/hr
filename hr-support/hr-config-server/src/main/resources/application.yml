@@ -1,0 +1,21 @@
+#注册到EurekaServer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1010/eureka/ # 注册到哪里
+    registry-fetch-interval-seconds: 5 # 拉去注册表时间间隔(默认30 s)
+  instance:
+    instance-id: config:1020 # 表示注册时使用的实例名
+    prefer-ip-address: true # 表示使用ip 注册到eureka
+    lease-renewal-interval-in-seconds: 5 # 客户端续约频率
+spring:
+  application:
+    name: config-server # 注册时, 配置的名字
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/shi_wei_git/spring-cloud-config.git # 配置中心的厂库克隆地址
+          # 开源了可以不写username/password
+server:
+  port: 1020 # 端口

@@ -1,0 +1,13 @@
+server:
+  port: 1010 # 端口
+eureka:
+  instance:
+    hostname: localhost # 主机名
+    lease-expiration-duration-in-seconds: 15 # 服务剔除时间(默认90s)
+  client:
+    register-with-eureka: false # 是否注册到eureka, 这是服务器, 不注册到eureka
+    fetch-registry: false # 是否获取注册表, 这是服务器, 不获取
+    service-url:
+      default-zone: http://localhost:1010/eureka/ # 这是服务注册地址, 其他客户端注册到这里
+  server:
+    enable-self-preservation: false #关闭自我保护警告
