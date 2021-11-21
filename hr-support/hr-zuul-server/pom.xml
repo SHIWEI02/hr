@@ -11,16 +11,12 @@
 
     <artifactId>hr-zuul-server</artifactId>
      <dependencies>
-         <!--基础搭建-->
-         <!--euraka-client-->
+
+         <!--导入公共依赖-->
          <dependency>
-             <groupId>org.springframework.cloud</groupId>
-             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-         </dependency>
-         <!--springbootweb-->
-         <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-web</artifactId>
+             <groupId>cn.shiwei</groupId>
+             <artifactId>hr-basic-dependency</artifactId>
+             <version>1.0-SNAPSHOT</version>
          </dependency>
 
          <!--zuul网关依赖-->
@@ -29,11 +25,6 @@
              <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
          </dependency>
 
-         <!--整合配置中心config客户端-->
-         <dependency>
-             <groupId>org.springframework.cloud</groupId>
-             <artifactId>spring-cloud-config-client</artifactId>
-         </dependency>
      </dependencies>
 
 </project>

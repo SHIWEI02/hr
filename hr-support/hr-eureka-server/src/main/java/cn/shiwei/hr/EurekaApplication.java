@@ -1,4 +1,4 @@
-package cn.shiwei;
+package cn.shiwei.hr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

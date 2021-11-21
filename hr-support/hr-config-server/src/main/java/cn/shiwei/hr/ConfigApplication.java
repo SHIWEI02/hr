@@ -1,15 +1,15 @@
-package cn.shiwei;
+package cn.shiwei.hr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableZuulProxy
-public class ZuulApplication {
+@EnableConfigServer
+public class ConfigApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ZuulApplication.class);
+        SpringApplication.run(ConfigApplication.class);
     }
 }

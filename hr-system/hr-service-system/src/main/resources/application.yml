@@ -1,0 +1,14 @@
+server:
+  port: 1040 # 端口
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1010/eureka/ # 注册到哪里
+    registry-fetch-interval-seconds: 5 # 拉去注册表时间间隔(默认30 s)
+  instance:
+    instance-id: system:1040 # 表示注册时使用的实例名
+    prefer-ip-address: true # 表示使用ip 注册到eureka
+    lease-renewal-interval-in-seconds: 5 # 客户端续约频率(默认30)
+spring:
+  application:
+    name: system-service # 注册时, 配置的名字

@@ -9,14 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hr-basic</artifactId>
+    <artifactId>hr-system</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>hr-basic-common</module>
-        <module>hr-basic-util</module>
-        <module>hr-basic-dependency</module>
-        <module>hr-basic-code-generation</module>
+        <module>hr-service-system</module>
+        <module>hr-common-system</module>
     </modules>
 
+    <dependencies>
+
+
+    </dependencies>
 
 </project>

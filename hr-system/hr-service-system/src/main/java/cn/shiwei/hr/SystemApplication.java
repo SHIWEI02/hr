@@ -1,15 +1,13 @@
-package cn.shiwei;
+package cn.shiwei.hr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-@SpringBootApplication
 @EnableEurekaClient
-@EnableConfigServer
-public class ConfigApplication {
+@SpringBootApplication
+public class SystemApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConfigApplication.class);
+        SpringApplication.run(SystemApplication.class);
     }
 }

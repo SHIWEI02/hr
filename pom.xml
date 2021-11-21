@@ -10,6 +10,7 @@
     <modules>
         <module>hr-support</module>
         <module>hr-basic</module>
+        <module>hr-system</module>
     </modules>
 
     <!--父项目, 不写代码, 打包方式选用pom,  web项目war, springboot默认jar-->
