@@ -36,3 +36,4 @@
 #          thread:
 #            timeoutInMilliseconds: 10000
 #            #如果配置ribbon的重试，hystrix的超时时间要大于ribbon的超时时间
+

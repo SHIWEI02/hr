@@ -12,6 +12,7 @@
     <artifactId>hr-common-system</artifactId>
     <dependencies>
 
+        <!--导入query公共父类-->
         <dependency>
             <groupId>cn.shiwei</groupId>
             <artifactId>hr-basic-common</artifactId>

@@ -11,14 +11,10 @@
 
     <artifactId>hr-system</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>hr-service-system</module>
         <module>hr-common-system</module>
     </modules>
-
-    <dependencies>
-
-
-    </dependencies>
 
 </project>

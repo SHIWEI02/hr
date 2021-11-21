@@ -12,3 +12,13 @@ eureka:
 spring:
   application:
     name: system-service # 注册时, 配置的名字
+  # 配置datasource
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hr-system?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 991202
+    type: com.alibaba.druid.pool.DruidDataSource # 用阿里的druid连接池
+# 集成MyBatis-Plus
+mybatis-plus:
+  mapper-locations: classpath:cn/shiwie/hr/mapper/*Mapper.xml
