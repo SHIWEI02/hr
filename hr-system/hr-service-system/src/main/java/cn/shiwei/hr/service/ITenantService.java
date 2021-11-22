@@ -1,6 +1,8 @@
 package cn.shiwei.hr.service;
 
 import cn.shiwei.hr.domain.Tenant;
+import cn.shiwei.hr.dto.TenantRegisterDto;
+import cn.shiwei.hr.util.AjaxResult;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.service.IService;
  */
 public interface ITenantService extends IService<Tenant> {
 
+    void entering(TenantRegisterDto registerDto);
 }

@@ -17,6 +17,7 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
        // TODO 添加不同微服的swagger 用于聚合
         // location 只修改 /**/**/v2/api-docs (/前缀/服务别名/固定)
        resources.add(swaggerResource("系统管理中心", "/hr/system/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("认证管理中心", "/hr/auth/v2/api-docs", "2.0"));
        return resources;
     }
 

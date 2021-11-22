@@ -1,5 +1,6 @@
 package cn.shiwei.hr.web.controller;
 
+import cn.shiwei.hr.dto.TenantRegisterDto;
 import cn.shiwei.hr.service.ITenantService;
 import cn.shiwei.hr.domain.Tenant;
 import cn.shiwei.hr.query.TenantQuery;
@@ -65,5 +66,14 @@ public class TenantController {
         page = tenantService.selectPage(page);
         PageList pageList = new PageList<Tenant>(page.getTotal(),page.getRecords());
         return AjaxResult.me().setResultObj(pageList);
+    }
+
+    /**
+     * 保存和修改
+     */
+    @RequestMapping(value="/entering",method= RequestMethod.POST)
+    public AjaxResult entering(@RequestBody TenantRegisterDto registerDto){
+        tenantService.entering(registerDto);
+        return AjaxResult.me();
     }
 }

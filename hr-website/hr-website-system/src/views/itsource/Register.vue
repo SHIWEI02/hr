@@ -174,13 +174,39 @@
         methods: {
             getTenantTypes(){
                 this.$http.get("/system/tenantType/list") //$.Post(.....)
-                    .then(result=>{
-                        this.tenantTypes = result.data;
+                    .then(res=>{
+                        let {success, message, resultObj} = res.data;
+                        if (success){
+                            this.tenantTypes = resultObj;
+                        } else {
+                            this.$message({
+                                message: message,
+                                type: 'error'
+                            });
+                        }
+                    }).catch(error => {
+                    this.$message({
+                        message: "系统繁忙!",
+                        type: 'error'
                     });
+                });
             },
             getMeals(){
-              this.$http.get("/system/meal/list").then(res=>{
-                  this.meals = res.data;
+              this.$http.get("/auth/meal/list").then(res=>{
+                  let {success, message, resultObj} = res.data;
+                  if (success){
+                      this.meals = resultObj;
+                  } else {
+                      this.$message({
+                          message: message,
+                          type: 'error'
+                      });
+                  }
+              }).catch(error => {
+                  this.$message({
+                      message: "系统繁忙!",
+                      type: 'error'
+                  });
               });
             },
             selectAdrressConfirm(){
@@ -243,13 +269,17 @@
                                     "companyNum":this.employee.companyNum,
                                     "address":this.employee.address,
                                     "logo":this.employee.logo,
-                                    "tenantTypeId":this.employee.tenantTypeId,
+                                    "tenantTypeId":this.employee.tenantTypeId
                                 },
                                 "employee":{
-                                    "username" :this.employee.username,
+                                    "realName" :this.employee.username,
                                     "tel" :this.employee.tel,
                                     "email" :this.employee.email,
-                                    "password" :this.employee.password,
+                                    "password" :this.employee.password
+                                },
+                                "login": {
+                                    "username" :this.employee.username,
+                                    "password" :this.employee.password
                                 },
                                 "mealId":this.employee.mealId
                             };

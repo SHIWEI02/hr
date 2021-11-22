@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.shiwei.hr.mapper.MealMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.shiwei.hr.domain.Meal">
+        <id column="id" property="id" />
+        <result column="meal_name" property="mealName" />
+        <result column="meal_price" property="mealPrice" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!--
+    void saveRelationWithLogin(
+    @Param("mealId") Long mealId,
+    @Param("loginId") Long loginId,
+    @Param("expireTime") Date expireTime,
+    @Param("state") int state);-->
+    <insert id="saveRelationWithLogin">
+        insert into t_login_meal
+        (meal_id, login_id, expire_date, state)
+        values (
+        #{mealId},
+        #{loginId},
+        #{expireTime},
+        #{state}
+        );
+    </insert>
+
+</mapper>

@@ -6,6 +6,8 @@ import cn.shiwei.hr.service.IEmployeeService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * <p>
  *  服务实现类
@@ -16,5 +18,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> implements IEmployeeService {
-
+    @Override
+    public boolean insert(Employee entity) {
+        entity.setId(null);
+        entity.setInputTime(new Date());
+        return super.insert(entity);
+    }
 }

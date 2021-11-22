@@ -15,6 +15,7 @@
         <module>hr-eureka-server</module>
         <module>hr-zuul-server</module>
         <module>hr-config-server</module>
+        <module>hr-fegin-server</module>
     </modules>
 
 

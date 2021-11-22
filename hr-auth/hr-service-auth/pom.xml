@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hr-auth</artifactId>
+        <groupId>cn.shiwei</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>hr-service-auth</artifactId>
+
+    <dependencies>
+        <!--导入公共依赖-->
+
+        <!--导入mybatis-plus 和 公共查询类父类-->
+        <dependency>
+            <groupId>cn.shiwei</groupId>
+            <artifactId>hr-common-auth</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--导入,集成eureka config springbootweb 等 -->
+        <dependency>
+            <groupId>cn.shiwei</groupId>
+            <artifactId>hr-basic-dependency</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

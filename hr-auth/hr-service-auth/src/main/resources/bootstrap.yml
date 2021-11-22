@@ -1,0 +1,8 @@
+# 指向配置中心, 告诉配置中心需要扫描配置文件
+spring:
+  cloud:
+    config:
+      uri: http://localhost:1020 # 配置中心地址
+      name: application-auth-service # 配置文件的名字(application-zuul-dev)
+      profile: dev # 配置文件的环境
+      label: master # 主分支

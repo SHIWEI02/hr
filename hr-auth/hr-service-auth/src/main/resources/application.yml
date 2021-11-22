@@ -1,0 +1,24 @@
+server:
+  port: 1050 # 端口
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1010/eureka/ # 注册到哪里
+    registry-fetch-interval-seconds: 5 # 拉去注册表时间间隔(默认30 s)
+  instance:
+    instance-id: auth:1050 # 表示注册时使用的实例名
+    prefer-ip-address: true # 表示使用ip 注册到eureka
+    lease-renewal-interval-in-seconds: 5 # 客户端续约频率(默认30)
+spring:
+  application:
+    name: auth-service-server # 注册时, 配置的名字
+  # 配置datasource
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/hr-auth?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 991202
+    type: com.alibaba.druid.pool.DruidDataSource # 用阿里的druid连接池
+# 集成MyBatis-Plus
+mybatis-plus:
+  mapper-locations: classpath:cn/shiwie/hr/mapper/*Mapper.xml

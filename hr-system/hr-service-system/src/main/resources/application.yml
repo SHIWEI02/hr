@@ -11,7 +11,7 @@ eureka:
     lease-renewal-interval-in-seconds: 5 # 客户端续约频率(默认30)
 spring:
   application:
-    name: system-service # 注册时, 配置的名字
+    name: system-service-server # 注册时, 配置的名字
   # 配置datasource
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -22,3 +22,22 @@ spring:
 # 集成MyBatis-Plus
 mybatis-plus:
   mapper-locations: classpath:cn/shiwie/hr/mapper/*Mapper.xml
+fegin:
+  hystrix:
+    enabled: true # 开启hystrix:
+  ribbon:
+    eager-load.enabled: true # 饥饿加载
+ribbon:
+  MaxAutoRetries: 1 #对当前服务的重试次数
+  MaxAutoRetriesNextServer: 1 #切换相同Server的次数
+  OkToRetryOnAllOperations: false # 对所有的操作请求都进行重试，如post就不能重试，如果没做幂等处理，重试多次post会造成数据的多次添加或修改
+  ConnectTimeout: 1500 #请求连接的超时时间
+  ReadTimeout: 2000 #请求处理的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000
+            #如果配置ribbon的重试，hystrix的超时时间要大于ribbon的超时时间
